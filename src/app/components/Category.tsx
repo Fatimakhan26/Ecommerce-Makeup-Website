@@ -29,7 +29,7 @@ const Category = () => {
         <div className="container text-center text-white">
         <h3 className={`${whisper.className} text-[40px]`}>Favourite category</h3>
         <h2 className='text-[40px] font-medium'>Top Category</h2>
-        <div className="flex gap-4 justify-center md:gap-16 pt-8">
+        <div className="justify-center md:gap-16 grid sm:grid-cols-2 md:grid-cols-3 gap-8 pt-8">
         {data.map((item) => (
             <CategoryCard
             key={item.type}

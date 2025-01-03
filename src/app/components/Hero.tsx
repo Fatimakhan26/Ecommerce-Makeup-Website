@@ -15,8 +15,8 @@ const Hero = () => {
                 Trendy Makeup for girls
                 </h2>
 
-                <p className='text-gray-600 text-[14px] xl:text-[16px]'>Lorem ipsum dolor sit amet consectetur
-                     adipisicing elit.</p>
+                <p className='text-gray-600 text-[14px] xl:text-[16px]'>Follow the latest makeup trends and get inspired to transform your look in an instant with all new everything,
+                   from lipstick trends to eye makeup trends</p>
                 <button className='bg-[#333] uppercase text-white text-[12px] lg:text-[16px] py-2
                 xl:py-4 px-8 rounded-md hover:bg-accent'>Shop now</button>
         </div>

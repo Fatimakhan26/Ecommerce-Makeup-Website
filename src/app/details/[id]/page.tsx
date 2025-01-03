@@ -10,6 +10,7 @@ import { IoCartOutline } from 'react-icons/io5';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { MdCompareArrows } from 'react-icons/md';
 import { FaInstagram, FaTwitter } from 'react-icons/fa6';
+import { useDispatch } from 'react-redux';
 
 export interface Iproduct {
     id: number;
@@ -36,7 +37,28 @@ const DetailPage = () => {
     const getProductData = Data.filter((item)=> item.id.toString()=== id)[0];
     setProductData(getProductData);
 
+   
  })
+
+
+ const handleAddToCart = () => {
+   if (!productData || !productData.id) {
+     alert('Product data not loaded yet!');
+     return;
+   }
+ 
+   useDispatch(
+     addToCart({
+       id: productData.id,
+       img: productData.img,
+       name: productData.name,
+       price: productData.price,
+     })
+   );
+ 
+   alert(`${productData.name} has been added to your cart!`);
+ };
+ 
 
 
 
@@ -91,6 +113,7 @@ const DetailPage = () => {
 
                  <button className='uppercase bg-accent py-4 px-8 rounded-lg text-white
                  flex gap-2 items-center hover:bg-black'
+                 onClick={handleAddToCart}
                  >
                     <IoCartOutline className='text-[24px]'/>
                     Add to cart
