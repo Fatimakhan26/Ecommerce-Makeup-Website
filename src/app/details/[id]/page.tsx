@@ -12,7 +12,7 @@ import { MdCompareArrows } from 'react-icons/md';
 import { FaInstagram, FaTwitter } from 'react-icons/fa6';
 import { useDispatch } from 'react-redux';
 
-export interface Iproduct {
+interface Iproduct {
     id: number;
     img: string;
     name: string;
@@ -45,17 +45,7 @@ const DetailPage = () => {
    if (!productData || !productData.id) {
      alert('Product data not loaded yet!');
      return;
-   }
- 
-   useDispatch(
-     addToCart({
-       id: productData.id,
-       img: productData.img,
-       name: productData.name,
-       price: productData.price,
-     })
-   );
- 
+   } 
    alert(`${productData.name} has been added to your cart!`);
  };
  
